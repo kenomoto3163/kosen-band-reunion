@@ -464,6 +464,25 @@
       line-height: 1.7;
     }
 
+    .survey-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 16px 0;
+    }
+    .survey-list li {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      padding: 6px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .survey-list li:last-child {
+      border-bottom: none;
+    }
+    .survey-list li strong {
+      color: var(--text-primary);
+    }
+
     .table-wrap {
       overflow-x: auto;
       -webkit-overflow-scrolling: touch;
@@ -924,16 +943,38 @@
         <span class="decision-number">01</span>
         <h3 class="decision-title">参加候補メンバーの洗い出し</h3>
       </div>
-      <p class="decision-desc">何学年分を対象にするか、何バンドを目標にするか、観覧者の範囲をどうするか。まずは声をかける候補をリストアップし、参加意向・日程希望と合わせて希望する役割（企画統括 / 会場・日程調整 / 出演者連絡 / 当日運営 / 会計など）もアンケートで確認する。</p>
+      <p class="decision-desc">何学年分を対象にするか、何バンドを目標にするか、観覧者の範囲をどうするか。まずは声をかける候補をリストアップする。</p>
     </div>
 
-    <!-- Decision 2: 日程確定 -->
+    <!-- Decision 2: アンケート -->
     <div class="decision-item fade-in">
       <div class="decision-header">
         <span class="decision-number">02</span>
-        <h3 class="decision-title">メンバーの意向を聞いて日程を確定する</h3>
+        <h3 class="decision-title">メンバーへアンケートを実施する</h3>
       </div>
-      <p class="decision-desc">候補メンバーに参加意向と日程の希望を確認し、それを踏まえて開催日を決定する。</p>
+      <p class="decision-desc">候補メンバーに以下の項目を確認する。</p>
+      <ul class="survey-list">
+        <li><strong>参加意向</strong> --- 出演する / 観覧のみ / 不参加</li>
+        <li><strong>日程の希望</strong> --- 候補日ごとの◎○△×</li>
+        <li><strong>希望エリア</strong> --- 木更津・千葉 / 東京 / どちらでも</li>
+        <li><strong>担当パート</strong> --- Vo / Gt / Ba / Dr / Key / その他</li>
+        <li><strong>当時のバンド名・メンバー</strong> --- 覚えている範囲で</li>
+        <li><strong>一緒にやりたい人</strong> --- 当時と違う編成でもOKか</li>
+        <li><strong>運営の役割希望</strong> --- 企画統括 / 会場・日程調整 / 出演者連絡 / 当日運営（PA・照明・MC・受付）/ 会計 / 撮影</li>
+        <li><strong>家族・子ども同伴</strong> --- 同伴予定あり / なし / 未定（人数も）</li>
+        <li><strong>二次会参加</strong> --- 参加 / 不参加 / 未定</li>
+        <li><strong>宿泊の必要性</strong> --- 必要 / 不要（遠方参加者向け）</li>
+        <li><strong>その他要望・質問</strong> --- 自由記述</li>
+      </ul>
+    </div>
+
+    <!-- Decision 3: 日程確定 -->
+    <div class="decision-item fade-in">
+      <div class="decision-header">
+        <span class="decision-number">03</span>
+        <h3 class="decision-title">日程を確定する</h3>
+      </div>
+      <p class="decision-desc">アンケート結果を踏まえて開催日を決定する。</p>
       <div class="table-wrap">
         <table class="compare-table">
           <thead>
@@ -963,11 +1004,11 @@
       </div>
     </div>
 
-    <!-- Decision 3: ライブハウス確定 -->
+    <!-- Decision 4: ライブハウス確定 -->
     <div class="decision-item fade-in">
       <div class="decision-header">
-        <span class="decision-number">03</span>
-        <h3 class="decision-title">メンバーの意向を踏まえてライブハウスを確定する</h3>
+        <span class="decision-number">04</span>
+        <h3 class="decision-title">ライブハウスを確定する</h3>
       </div>
       <p class="decision-desc">参加人数・エリアの希望・日程を踏まえて、最適な会場を決定する。</p>
       <div class="table-wrap">
@@ -989,13 +1030,67 @@
       </div>
     </div>
 
-    <!-- Decision 4: 予算 -->
+    <!-- Decision 5: 予算 -->
     <div class="decision-item fade-in">
       <div class="decision-header">
-        <span class="decision-number">04</span>
+        <span class="decision-number">05</span>
         <h3 class="decision-title">予算・会費を決める</h3>
       </div>
       <p class="decision-desc">会場費 + 機材費 + 二次会費の概算から一人あたりの会費を算出。出演者と観覧者で傾斜をつけるかも検討。</p>
+    </div>
+
+    <!-- Decision 6: バンド確定 -->
+    <div class="decision-item fade-in">
+      <div class="decision-header">
+        <span class="decision-number">06</span>
+        <h3 class="decision-title">出演バンドの確定</h3>
+      </div>
+      <p class="decision-desc">アンケート結果からバンド編成を確定する。メンバーが揃わないバンドの調整（助っ人・合体など）もここで。</p>
+    </div>
+
+    <!-- Decision 7: セットリスト・タイムテーブル -->
+    <div class="decision-item fade-in">
+      <div class="decision-header">
+        <span class="decision-number">07</span>
+        <h3 class="decision-title">セットリスト・タイムテーブルの作成</h3>
+      </div>
+      <p class="decision-desc">各バンドのセットリスト（曲目・曲数）を提出してもらい、当日のタイムテーブルを組む。全員セッション曲の決定も。</p>
+    </div>
+
+    <!-- Decision 8: 観覧者・家族向け案内 -->
+    <div class="decision-item fade-in">
+      <div class="decision-header">
+        <span class="decision-number">08</span>
+        <h3 class="decision-title">観覧者・家族向けの案内</h3>
+      </div>
+      <p class="decision-desc">観覧のみの参加者への告知。家族・子ども連れ向けの情報（キッズスペース、周辺施設、授乳室など）やアクセス案内。</p>
+    </div>
+
+    <!-- Decision 9: 二次会手配 -->
+    <div class="decision-item fade-in">
+      <div class="decision-header">
+        <span class="decision-number">09</span>
+        <h3 class="decision-title">二次会の手配</h3>
+      </div>
+      <p class="decision-desc">会場近くの居酒屋を予約。人数・予算・子連れ対応の確認。</p>
+    </div>
+
+    <!-- Decision 10: 当日の運営計画 -->
+    <div class="decision-item fade-in">
+      <div class="decision-header">
+        <span class="decision-number">10</span>
+        <h3 class="decision-title">当日の運営計画</h3>
+      </div>
+      <p class="decision-desc">受付・PA/照明オペ・MC・撮影・機材手配など、当日必要な役割の割り振りと準備。</p>
+    </div>
+
+    <!-- Decision 11: 直前確認 -->
+    <div class="decision-item fade-in">
+      <div class="decision-header">
+        <span class="decision-number">11</span>
+        <h3 class="decision-title">直前確認・リマインド</h3>
+      </div>
+      <p class="decision-desc">最終参加者確認、会費徴収、集合時間・持ち物の連絡、リハーサルスケジュールの共有。</p>
     </div>
 
   </section>
