@@ -1,0 +1,196 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 920" font-family="'Helvetica Neue', Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 7" refX="10" refY="3.5" markerWidth="8" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 3.5 L 0 7 z" fill="#888"/>
+    </marker>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="920" fill="url(#bg)" rx="12"/>
+
+  <!-- Title -->
+  <text x="450" y="40" text-anchor="middle" fill="#e0e0e0" font-size="18" font-weight="bold">Next Actions フロー図 — 依存関係</text>
+  <text x="450" y="60" text-anchor="middle" fill="#888" font-size="11">矢印 = 「これが終わらないと次に進めない」</text>
+
+  <!-- Styles for nodes -->
+  <style>
+    .node { rx: 8; ry: 8; stroke-width: 1.5; }
+    .node-phase1 { fill: #1e3a5f; stroke: #4a90d9; }
+    .node-phase2 { fill: #1e4d3a; stroke: #4ad99a; }
+    .node-phase3 { fill: #4d3a1e; stroke: #d9a04a; }
+    .node-phase4 { fill: #4d1e3a; stroke: #d94a90; }
+    .label { fill: #fff; font-size: 11px; font-weight: bold; }
+    .sublabel { fill: #aaa; font-size: 9px; }
+    .num { fill: #fff; font-size: 10px; font-weight: bold; opacity: 0.7; }
+    .arrow { stroke: #888; stroke-width: 1.5; fill: none; marker-end: url(#arrow); }
+    .arrow-strong { stroke: #4a90d9; stroke-width: 2; fill: none; marker-end: url(#arrow); }
+    .phase-label { fill: #666; font-size: 10px; font-style: italic; }
+  </style>
+
+  <!-- Phase labels on the left -->
+  <text x="20" y="130" class="phase-label">Phase 1</text>
+  <text x="20" y="135" class="phase-label" dy="12">2-3月</text>
+  <text x="20" y="340" class="phase-label">Phase 2</text>
+  <text x="20" y="345" class="phase-label" dy="12">4-5月</text>
+  <text x="20" y="530" class="phase-label">Phase 3</text>
+  <text x="20" y="535" class="phase-label" dy="12">6-7月</text>
+  <text x="20" y="720" class="phase-label">Phase 4-5</text>
+  <text x="20" y="725" class="phase-label" dy="12">8月〜</text>
+
+  <!-- Phase dividers -->
+  <line x1="70" y1="240" x2="870" y2="240" stroke="#333" stroke-width="1" stroke-dasharray="4,4"/>
+  <line x1="70" y1="440" x2="870" y2="440" stroke="#333" stroke-width="1" stroke-dasharray="4,4"/>
+  <line x1="70" y1="640" x2="870" y2="640" stroke="#333" stroke-width="1" stroke-dasharray="4,4"/>
+
+  <!-- ===== NODES ===== -->
+
+  <!-- 01: メンバー洗い出し -->
+  <rect x="350" y="85" width="200" height="50" class="node node-phase1"/>
+  <text x="365" y="107" class="num">01</text>
+  <text x="385" y="107" class="label">参加候補メンバーの洗い出し</text>
+  <text x="385" y="122" class="sublabel">対象学年・バンド数・観覧者範囲</text>
+
+  <!-- 02: アンケート -->
+  <rect x="350" y="170" width="200" height="50" class="node node-phase1"/>
+  <text x="365" y="192" class="num">02</text>
+  <text x="385" y="192" class="label">アンケート実施</text>
+  <text x="385" y="207" class="sublabel">意向・日程・エリア・パート・役割…</text>
+
+  <!-- 03: 連絡グループ -->
+  <rect x="640" y="170" width="200" height="50" class="node node-phase1"/>
+  <text x="655" y="192" class="num">03</text>
+  <text x="675" y="192" class="label">連絡グループの整備</text>
+  <text x="675" y="207" class="sublabel">LINE等（幹事用/全体用）</text>
+
+  <!-- 04: 日程確定 -->
+  <rect x="200" y="280" width="200" height="50" class="node node-phase2"/>
+  <text x="215" y="302" class="num">04</text>
+  <text x="235" y="302" class="label">日程を確定する</text>
+  <text x="235" y="317" class="sublabel">アンケート結果から決定</text>
+
+  <!-- 05: ライブハウス確定 -->
+  <rect x="500" y="280" width="200" height="50" class="node node-phase2"/>
+  <text x="515" y="302" class="num">05</text>
+  <text x="535" y="302" class="label">ライブハウスを確定する</text>
+  <text x="535" y="317" class="sublabel">人数・エリア・日程から決定</text>
+
+  <!-- 06: 予算・会費 -->
+  <rect x="350" y="380" width="200" height="50" class="node node-phase2"/>
+  <text x="365" y="402" class="num">06</text>
+  <text x="385" y="402" class="label">予算・会費を決める</text>
+  <text x="385" y="417" class="sublabel">PayPay/振込で事前徴収</text>
+
+  <!-- 07: バンド確定 -->
+  <rect x="100" y="480" width="200" height="50" class="node node-phase3"/>
+  <text x="115" y="502" class="num">07</text>
+  <text x="135" y="502" class="label">出演バンドの確定</text>
+  <text x="135" y="517" class="sublabel">編成調整・助っ人・合体</text>
+
+  <!-- 08: セットリスト -->
+  <rect x="100" y="580" width="200" height="50" class="node node-phase3"/>
+  <text x="115" y="602" class="num">08</text>
+  <text x="135" y="602" class="label">セットリスト・タイムテーブル</text>
+  <text x="135" y="617" class="sublabel">曲目提出・全員セッション</text>
+
+  <!-- 09: 記念グッズ -->
+  <rect x="380" y="480" width="200" height="50" class="node node-phase3"/>
+  <text x="395" y="502" class="num">09</text>
+  <text x="415" y="502" class="label">記念グッズの手配</text>
+  <text x="415" y="517" class="sublabel">Tシャツ等・デザイン・サイズ回収</text>
+
+  <!-- 10: 観覧者・家族案内 -->
+  <rect x="620" y="480" width="220" height="50" class="node node-phase3"/>
+  <text x="635" y="502" class="num">10</text>
+  <text x="655" y="502" class="label">観覧者・家族向けの案内</text>
+  <text x="655" y="517" class="sublabel">キッズ対応・アクセス情報</text>
+
+  <!-- 11: 二次会 -->
+  <rect x="620" y="580" width="220" height="50" class="node node-phase3"/>
+  <text x="635" y="602" class="num">11</text>
+  <text x="655" y="602" class="label">二次会の手配</text>
+  <text x="655" y="617" class="sublabel">居酒屋予約・子連れ・アレルギー対応</text>
+
+  <!-- 12: 当日運営 -->
+  <rect x="250" y="680" width="200" height="50" class="node node-phase4"/>
+  <text x="265" y="702" class="num">12</text>
+  <text x="285" y="702" class="label">当日の運営計画</text>
+  <text x="285" y="717" class="sublabel">受付・PA・MC・撮影の役割分担</text>
+
+  <!-- 13: 直前確認 -->
+  <rect x="350" y="800" width="200" height="50" class="node node-phase4" filter="url(#glow)"/>
+  <text x="365" y="822" class="num">13</text>
+  <text x="385" y="822" class="label">直前確認・リマインド</text>
+  <text x="385" y="837" class="sublabel">会費完了・持ち物・集合時間</text>
+
+  <!-- ===== ARROWS (dependencies) ===== -->
+
+  <!-- 01 → 02 -->
+  <line x1="450" y1="135" x2="450" y2="170" class="arrow-strong"/>
+
+  <!-- 02 → 03 -->
+  <line x1="550" y1="195" x2="640" y2="195" class="arrow"/>
+
+  <!-- 02 → 04 -->
+  <path d="M 400 220 L 300 250 L 300 280" class="arrow-strong"/>
+
+  <!-- 02 → 05 (エリア希望・人数) -->
+  <path d="M 500 220 L 600 250 L 600 280" class="arrow-strong"/>
+
+  <!-- 04 → 05 (日程が決まらないと会場予約できない) -->
+  <line x1="400" y1="305" x2="500" y2="305" class="arrow-strong"/>
+
+  <!-- 05 → 06 (会場費が決まらないと予算組めない) -->
+  <path d="M 550 330 L 450 355 L 450 380" class="arrow-strong"/>
+
+  <!-- 04 → 06 -->
+  <path d="M 350 330 L 400 355 L 420 380" class="arrow"/>
+
+  <!-- 02 → 07 (パート・バンド名・一緒にやりたい人) -->
+  <path d="M 350 210 L 150 240 L 150 440 L 200 480" class="arrow-strong"/>
+
+  <!-- 07 → 08 -->
+  <line x1="200" y1="530" x2="200" y2="580" class="arrow-strong"/>
+
+  <!-- 06 → 09 (予算がわからないとグッズ規模決められない) -->
+  <path d="M 450 430 L 480 455 L 480 480" class="arrow"/>
+
+  <!-- 05 → 10 (会場情報がないと案内できない) -->
+  <path d="M 680 330 L 730 440 L 730 480" class="arrow-strong"/>
+
+  <!-- 07 → 10 (出演者数がわからないと観覧者案内の規模感が不明) -->
+  <path d="M 300 505 L 620 505" class="arrow"/>
+
+  <!-- 05 → 11 (会場の場所がわからないと二次会場所決められない) -->
+  <path d="M 700 330 L 770 440 L 770 580" class="arrow"/>
+
+  <!-- 10 → 11 (観覧者人数確定後に二次会規模が決まる) -->
+  <line x1="730" y1="530" x2="730" y2="580" class="arrow"/>
+
+  <!-- 08 → 12 (タイムテーブルが決まらないと運営計画組めない) -->
+  <path d="M 250 630 L 300 655 L 350 680" class="arrow-strong"/>
+
+  <!-- 11 → 12 -->
+  <path d="M 680 630 L 450 660 L 420 680" class="arrow"/>
+
+  <!-- 06 → 13 (会費徴収) -->
+  <path d="M 450 430 L 450 440 L 880 440 L 880 820 L 550 820" class="arrow" stroke-dasharray="4,4"/>
+
+  <!-- 12 → 13 -->
+  <line x1="400" y1="730" x2="430" y2="800" class="arrow-strong"/>
+
+  <!-- Legend -->
+  <rect x="650" y="850" width="230" height="60" fill="#111" rx="6" stroke="#333"/>
+  <line x1="665" y1="870" x2="710" y2="870" class="arrow-strong"/>
+  <text x="720" y="874" fill="#aaa" font-size="10">必須の依存関係</text>
+  <line x1="665" y1="892" x2="710" y2="892" class="arrow"/>
+  <text x="720" y="896" fill="#aaa" font-size="10">参考になる依存関係</text>
+
+</svg>
