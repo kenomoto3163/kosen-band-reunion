@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>再結成 〜20年目のアンコール〜 | 高専バンド同窓会ライブ 2026</title>
+  <meta name="description" content="高専バンド同窓会ライブ 2026 - 卒業20年、40歳の節目に、もう一度あのステージへ。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+  <style>
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg-primary: #0a0a0a;
+      --bg-secondary: #111111;
+      --bg-card: #1a1a1a;
+      --text-primary: #f0f0f0;
+      --text-secondary: #999999;
+      --accent: #e63946;
+      --accent-glow: rgba(230, 57, 70, 0.3);
+      --gold: #d4a843;
+      --border: #2a2a2a;
+      --font-display: 'Bebas Neue', sans-serif;
+      --font-body: 'Noto Sans JP', sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.8;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ========== Utility ========== */
+    .section {
+      padding: 80px 20px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-family: var(--font-display);
+      font-size: 0.85rem;
+      letter-spacing: 0.3em;
+      color: var(--accent);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .section-title {
+      font-family: var(--font-body);
+      font-weight: 900;
+      font-size: clamp(1.6rem, 5vw, 2.2rem);
+      line-height: 1.3;
+      margin-bottom: 32px;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ========== Hero ========== */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 40px 20px;
+      background: var(--bg-primary);
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 20% 50%, rgba(230, 57, 70, 0.08) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 50%, rgba(212, 168, 67, 0.05) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .hero-noise {
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-year {
+      font-family: var(--font-display);
+      font-size: clamp(1rem, 3vw, 1.4rem);
+      letter-spacing: 0.5em;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+
+    .hero-title {
+      font-family: var(--font-body);
+      font-weight: 900;
+      font-size: clamp(2rem, 8vw, 3.5rem);
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+
+    .hero-subtitle {
+      font-family: var(--font-display);
+      font-size: clamp(1.2rem, 4vw, 2rem);
+      letter-spacing: 0.15em;
+      color: var(--text-secondary);
+      margin-bottom: 32px;
+    }
+
+    .hero-catch {
+      font-size: clamp(0.95rem, 2.5vw, 1.15rem);
+      color: var(--gold);
+      letter-spacing: 0.15em;
+      font-weight: 700;
+    }
+
+    .hero-line {
+      width: 60px;
+      height: 2px;
+      background: var(--accent);
+      margin: 40px auto 0;
+      opacity: 0.6;
+    }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      color: var(--text-secondary);
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      animation: scrollBounce 2s ease-in-out infinite;
+    }
+
+    .hero-scroll span {
+      display: block;
+      width: 1px;
+      height: 24px;
+      background: var(--text-secondary);
+      opacity: 0.4;
+    }
+
+    @keyframes scrollBounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(8px); }
+    }
+
+    /* ========== Concept ========== */
+    .concept-text {
+      font-size: clamp(0.95rem, 2.5vw, 1.05rem);
+      color: var(--text-secondary);
+      line-height: 2;
+      margin-bottom: 24px;
+    }
+
+    .concept-highlight {
+      color: var(--text-primary);
+      font-weight: 700;
+    }
+
+    .concept-quote {
+      border-left: 3px solid var(--accent);
+      padding-left: 20px;
+      margin: 32px 0;
+      font-size: clamp(1.1rem, 3vw, 1.3rem);
+      font-weight: 700;
+      line-height: 1.6;
+      color: var(--text-primary);
+    }
+
+    .concept-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 40px;
+    }
+
+    .stat-item {
+      text-align: center;
+      padding: 20px 8px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--bg-secondary);
+    }
+
+    .stat-number {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 6vw, 2.4rem);
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .stat-label {
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+      letter-spacing: 0.05em;
+    }
+
+    /* ========== Schedule (Month Comparison) ========== */
+    .month-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    .month-card {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      background: var(--bg-secondary);
+      transition: border-color 0.3s ease;
+    }
+
+    .month-card:hover {
+      border-color: var(--accent);
+    }
+
+    .month-name {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      letter-spacing: 0.05em;
+      margin-bottom: 12px;
+      color: var(--text-primary);
+    }
+
+    .month-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .month-tag {
+      font-size: 0.75rem;
+      padding: 4px 10px;
+      border-radius: 100px;
+      background: var(--bg-card);
+      color: var(--text-secondary);
+      border: 1px solid var(--border);
+    }
+
+    .month-tag--good {
+      color: #4ade80;
+      border-color: rgba(74, 222, 128, 0.3);
+      background: rgba(74, 222, 128, 0.08);
+    }
+
+    .month-tag--neutral {
+      color: var(--gold);
+      border-color: rgba(212, 168, 67, 0.3);
+      background: rgba(212, 168, 67, 0.08);
+    }
+
+    .month-tag--caution {
+      color: var(--accent);
+      border-color: var(--accent-glow);
+      background: rgba(230, 57, 70, 0.08);
+    }
+
+    .month-detail {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    /* ========== Venue Cards ========== */
+    .venue-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    .venue-card {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      background: var(--bg-secondary);
+      transition: border-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .venue-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    .venue-area {
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 4px;
+    }
+
+    .venue-name {
+      font-weight: 900;
+      font-size: 1.15rem;
+      margin-bottom: 12px;
+    }
+
+    .venue-info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .venue-info-item {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+    }
+
+    .venue-info-item strong {
+      color: var(--text-primary);
+      font-weight: 700;
+    }
+
+    .venue-feature {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      padding-top: 12px;
+      border-top: 1px solid var(--border);
+    }
+
+    /* ========== Timeline ========== */
+    .timeline {
+      position: relative;
+      padding-left: 32px;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 7px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--accent), var(--border), var(--gold));
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 28px;
+    }
+
+    .timeline-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: -29px;
+      top: 4px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--bg-primary);
+      border: 2px solid var(--accent);
+    }
+
+    .timeline-item--live .timeline-dot {
+      background: var(--accent);
+      box-shadow: 0 0 12px var(--accent-glow);
+    }
+
+    .timeline-item--afterparty .timeline-dot {
+      border-color: var(--gold);
+      background: var(--gold);
+      box-shadow: 0 0 12px rgba(212, 168, 67, 0.3);
+    }
+
+    .timeline-time {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      margin-bottom: 2px;
+    }
+
+    .timeline-item--afterparty .timeline-time {
+      color: var(--gold);
+    }
+
+    .timeline-title {
+      font-weight: 700;
+      font-size: 1rem;
+      margin-bottom: 4px;
+    }
+
+    .timeline-desc {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* ========== Next Actions ========== */
+    .decision-item {
+      margin-bottom: 48px;
+    }
+
+    .decision-header {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .decision-number {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      color: var(--accent);
+      line-height: 1;
+    }
+
+    .decision-title {
+      font-weight: 900;
+      font-size: 1.1rem;
+    }
+
+    .decision-desc {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      margin-bottom: 16px;
+      line-height: 1.7;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      margin: 0 -20px;
+      padding: 0 20px;
+    }
+
+    .compare-table {
+      width: 100%;
+      min-width: 520px;
+      border-collapse: collapse;
+      font-size: 0.8rem;
+    }
+
+    .compare-table th {
+      text-align: left;
+      padding: 10px 12px;
+      border-bottom: 2px solid var(--accent);
+      color: var(--text-primary);
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .compare-table td {
+      padding: 9px 12px;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-secondary);
+      vertical-align: top;
+    }
+
+    .compare-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .compare-table .cell-name {
+      color: var(--text-primary);
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .compare-table .cell-good { color: #4ade80; }
+    .compare-table .cell-ok { color: var(--gold); }
+    .compare-table .cell-warn { color: var(--accent); }
+
+    .date-candidates {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .date-chip {
+      font-size: 0.75rem;
+      padding: 5px 12px;
+      border-radius: 100px;
+      border: 1px solid var(--border);
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+    }
+
+    .date-chip strong {
+      color: var(--text-primary);
+    }
+
+    /* ========== Milestones ========== */
+    .milestone-track {
+      position: relative;
+      padding-left: 28px;
+    }
+
+    .milestone-track::before {
+      content: '';
+      position: absolute;
+      left: 5px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: var(--border);
+    }
+
+    .milestone {
+      position: relative;
+      margin-bottom: 32px;
+    }
+
+    .milestone:last-child {
+      margin-bottom: 0;
+    }
+
+    .milestone-marker {
+      position: absolute;
+      left: -26px;
+      top: 2px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      border: 2px solid var(--accent);
+      background: var(--bg-primary);
+    }
+
+    .milestone--now .milestone-marker {
+      background: var(--accent);
+      box-shadow: 0 0 10px var(--accent-glow);
+    }
+
+    .milestone-phase {
+      font-family: var(--font-display);
+      font-size: 0.8rem;
+      letter-spacing: 0.15em;
+      color: var(--accent);
+    }
+
+    .milestone-title {
+      font-weight: 700;
+      font-size: 1rem;
+      margin-bottom: 4px;
+    }
+
+    .milestone-tasks {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    .closing {
+      text-align: center;
+      padding: 60px 20px 80px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .closing-text {
+      font-size: clamp(0.9rem, 2.5vw, 1rem);
+      color: var(--text-secondary);
+      line-height: 1.9;
+    }
+
+    /* ========== Footer ========== */
+    .footer {
+      text-align: center;
+      padding: 32px 20px;
+      font-size: 0.7rem;
+      color: #444;
+      border-top: 1px solid var(--border);
+    }
+
+    /* ========== Divider ========== */
+    .divider {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .divider hr {
+      border: none;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* ========== Media Queries ========== */
+    @media (min-width: 600px) {
+      .month-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .venue-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .concept-stats {
+        gap: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-noise"></div>
+    <div class="hero-content">
+      <p class="hero-year">2026</p>
+      <h1 class="hero-title">再結成<br>〜20年目のアンコール〜</h1>
+      <p class="hero-subtitle">KOSEN BAND REUNION LIVE</p>
+      <p class="hero-catch">"会えるうちに会おう"</p>
+      <div class="hero-line"></div>
+    </div>
+    <div class="hero-scroll">
+      scroll
+      <span></span>
+    </div>
+  </section>
+
+  <!-- Concept -->
+  <section class="section fade-in">
+    <p class="section-label">Concept</p>
+    <h2 class="section-title">卒業から20年。</h2>
+    <p class="concept-text">
+      高専時代のバンドを、もう一度やる。<br>
+      ライブハウスを一日借り切って、本番をやる。<br>
+      打ち上げまで含めて、まるごと一日。
+    </p>
+    <p class="concept-text">
+      卒業して20年。仕事があって、家庭があって、<br>
+      日々のことで精一杯だけど、<br>
+      ふとあの頃の楽しさを思い出すことはないですか。
+    </p>
+    <p class="concept-text">
+      <span class="concept-highlight">20年の節目に、もう一度火を灯してみませんか。</span>
+    </p>
+    <div class="concept-stats">
+      <div class="stat-item fade-in">
+        <div class="stat-number">20</div>
+        <div class="stat-label">Years</div>
+      </div>
+      <div class="stat-item fade-in">
+        <div class="stat-number">5-10</div>
+        <div class="stat-label">Bands</div>
+      </div>
+      <div class="stat-item fade-in">
+        <div class="stat-number">50-60</div>
+        <div class="stat-label">People</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"><hr></div>
+
+  <!-- Schedule -->
+  <section class="section fade-in">
+    <p class="section-label">Schedule</p>
+    <h2 class="section-title">2026年 秋〜冬で検討中</h2>
+    <div class="month-grid">
+      <div class="month-card fade-in">
+        <div class="month-name">Oct.</div>
+        <div class="month-tags">
+          <span class="month-tag month-tag--good">気候が良い</span>
+          <span class="month-tag month-tag--good">会場取りやすい</span>
+          <span class="month-tag month-tag--caution">準備期間短め</span>
+        </div>
+        <p class="month-detail">秋の好天で過ごしやすい。オフシーズンで会場も安い。ただし準備期間は約8ヶ月。</p>
+      </div>
+      <div class="month-card fade-in">
+        <div class="month-name">Nov.</div>
+        <div class="month-tags">
+          <span class="month-tag month-tag--good">予定を合わせやすい</span>
+          <span class="month-tag month-tag--neutral">バランス良し</span>
+        </div>
+        <p class="month-detail">気候・コスト・準備期間のバランスが良い。3連休（勤労感謝の日）前後が狙い目。</p>
+      </div>
+      <div class="month-card fade-in">
+        <div class="month-name">Dec.</div>
+        <div class="month-tags">
+          <span class="month-tag month-tag--good">準備期間は十分</span>
+          <span class="month-tag month-tag--neutral">忘年会の盛り上がり</span>
+          <span class="month-tag month-tag--caution">会場競争激化</span>
+        </div>
+        <p class="month-detail">忘年会シーズンで「同窓会」感は出しやすい。ただし会場予約は早め必須、宿泊コストも高め。</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"><hr></div>
+
+  <!-- Venue -->
+  <section class="section fade-in">
+    <p class="section-label">Venue</p>
+    <h2 class="section-title">会場候補</h2>
+    <div class="venue-grid">
+
+      <div class="venue-card fade-in">
+        <p class="venue-area">Kisarazu</p>
+        <h3 class="venue-name">LIVE HOUSE OSSA</h3>
+        <div class="venue-info">
+          <span class="venue-info-item"><strong>200</strong>人</span>
+          <span class="venue-info-item">JR木更津駅 徒歩圏内</span>
+        </div>
+        <p class="venue-feature">アクア木更津B館B1F。PA・照明完備。高専の地元で「あの頃の場所」感あり。キャパに余裕。</p>
+      </div>
+
+      <div class="venue-card fade-in">
+        <p class="venue-area">Chiba</p>
+        <h3 class="venue-name">千葉ANGA</h3>
+        <div class="venue-info">
+          <span class="venue-info-item"><strong>150</strong>人</span>
+          <span class="venue-info-item">JR千葉駅 徒歩7分</span>
+          <span class="venue-info-item"><strong>8〜11万円</strong>/7h</span>
+        </div>
+        <p class="venue-feature">YAMAHA PA、JBLスピーカー完備。千葉駅前でアクセス良好、宿泊施設も豊富。</p>
+      </div>
+
+      <div class="venue-card fade-in">
+        <p class="venue-area">Tokyo / Takadanobaba</p>
+        <h3 class="venue-name">音部屋スクエア</h3>
+        <div class="venue-info">
+          <span class="venue-info-item"><strong>60-130</strong>人</span>
+          <span class="venue-info-item">JR高田馬場駅 徒歩2分</span>
+          <span class="venue-info-item"><strong>約1万円</strong>/h</span>
+        </div>
+        <p class="venue-feature">グランドピアノ、プロジェクター、控え室あり。飲食持ち込み可。着席配置も可能。</p>
+      </div>
+
+      <div class="venue-card fade-in">
+        <p class="venue-area">Tokyo / Yotsuya</p>
+        <h3 class="venue-name">四谷LOTUS</h3>
+        <div class="venue-info">
+          <span class="venue-info-item"><strong>50-110</strong>人</span>
+          <span class="venue-info-item">四谷三丁目駅 徒歩1分</span>
+          <span class="venue-info-item"><strong>6.5万円〜</strong></span>
+        </div>
+        <p class="venue-feature">PA・照明完備。飲み放題・ケータリング手配可能。駅近で二次会にも便利。</p>
+      </div>
+
+      <div class="venue-card fade-in">
+        <p class="venue-area">Tokyo / Otsuka</p>
+        <h3 class="venue-name">大塚MEETS</h3>
+        <div class="venue-info">
+          <span class="venue-info-item"><strong>100</strong>人</span>
+          <span class="venue-info-item">JR大塚駅 徒歩2分</span>
+          <span class="venue-info-item"><strong>3万円〜</strong>/5h</span>
+        </div>
+        <p class="venue-feature">PA・照明完備。コストパフォーマンスが非常に高い。駅近で利便性も良好。</p>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="divider"><hr></div>
+
+  <!-- Timeline -->
+  <section class="section fade-in">
+    <p class="section-label">Timetable</p>
+    <h2 class="section-title">当日の流れ</h2>
+    <div class="timeline">
+
+      <div class="timeline-item fade-in">
+        <div class="timeline-dot"></div>
+        <div class="timeline-time">10:00 - 12:00</div>
+        <div class="timeline-title">機材搬入・セッティング</div>
+        <div class="timeline-desc">幹事・機材係で会場入り。PA・照明チェック。</div>
+      </div>
+
+      <div class="timeline-item fade-in">
+        <div class="timeline-dot"></div>
+        <div class="timeline-time">12:00 - 16:00</div>
+        <div class="timeline-title">リハーサル</div>
+        <div class="timeline-desc">各バンド約30分ずつ。音量・モニターバランスを確認。</div>
+      </div>
+
+      <div class="timeline-item fade-in">
+        <div class="timeline-dot"></div>
+        <div class="timeline-time">16:00 - 16:30</div>
+        <div class="timeline-title">休憩・最終調整</div>
+        <div class="timeline-desc">開場前の最終準備。受付セットアップ。</div>
+      </div>
+
+      <div class="timeline-item fade-in">
+        <div class="timeline-dot"></div>
+        <div class="timeline-time">16:30 - 17:00</div>
+        <div class="timeline-title">開場・受付</div>
+        <div class="timeline-desc">観覧者・出演者の受付開始。</div>
+      </div>
+
+      <div class="timeline-item timeline-item--live fade-in">
+        <div class="timeline-dot"></div>
+        <div class="timeline-time">17:00 - 20:10</div>
+        <div class="timeline-title">ライブ本番</div>
+        <div class="timeline-desc">開会挨拶の後、各バンド約20分 + 転換5分。8バンドが順番にステージへ。</div>
+      </div>
+
+      <div class="timeline-item timeline-item--live fade-in">
+        <div class="timeline-dot"></div>
+        <div class="timeline-time">20:10 - 20:30</div>
+        <div class="timeline-title">全員セッション</div>
+        <div class="timeline-desc">出演者全員でセッション。1〜2曲をみんなで。</div>
+      </div>
+
+      <div class="timeline-item fade-in">
+        <div class="timeline-dot"></div>
+        <div class="timeline-time">20:30 - 20:45</div>
+        <div class="timeline-title">記念撮影・クロージング</div>
+        <div class="timeline-desc">集合写真を撮って、片付けへ。</div>
+      </div>
+
+      <div class="timeline-item timeline-item--afterparty fade-in">
+        <div class="timeline-dot"></div>
+        <div class="timeline-time">21:00 - 23:00</div>
+        <div class="timeline-title">二次会</div>
+        <div class="timeline-desc">近隣の居酒屋で打ち上げ。ここが本番という説も。</div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="divider"><hr></div>
+
+  <!-- Milestones -->
+  <section class="section fade-in">
+    <p class="section-label">Milestones</p>
+    <h2 class="section-title">本番までのロードマップ</h2>
+    <div class="milestone-track">
+
+      <div class="milestone milestone--now fade-in">
+        <div class="milestone-marker"></div>
+        <div class="milestone-phase">Phase 1 --- 2-3月</div>
+        <div class="milestone-title">企画確定</div>
+        <div class="milestone-tasks">幹事チーム結成 / 開催時期の決定 / 会場エリアの方向性 / 予算感の合意</div>
+      </div>
+
+      <div class="milestone fade-in">
+        <div class="milestone-marker"></div>
+        <div class="milestone-phase">Phase 2 --- 4-5月</div>
+        <div class="milestone-title">基盤固め</div>
+        <div class="milestone-tasks">会場の下見・予約確定 / 出演バンドの声かけ開始 / 参加意向の回収 / 連絡グループ作成</div>
+      </div>
+
+      <div class="milestone fade-in">
+        <div class="milestone-marker"></div>
+        <div class="milestone-phase">Phase 3 --- 6-7月</div>
+        <div class="milestone-title">出演者確定</div>
+        <div class="milestone-tasks">出演バンド確定 / セットリスト提出依頼 / タイムテーブル草案 / 会費確定 / 観覧者へ告知</div>
+      </div>
+
+      <div class="milestone fade-in">
+        <div class="milestone-marker"></div>
+        <div class="milestone-phase">Phase 4 --- 8-9月</div>
+        <div class="milestone-title">リハーサル期間</div>
+        <div class="milestone-tasks">各バンド自主リハーサル / セットリスト最終提出 / タイムテーブル確定 / 二次会会場予約</div>
+      </div>
+
+      <div class="milestone fade-in">
+        <div class="milestone-marker"></div>
+        <div class="milestone-phase">Phase 5 --- 本番1ヶ月前</div>
+        <div class="milestone-title">直前準備</div>
+        <div class="milestone-tasks">最終参加者確認 / 会費徴収 / 機材・備品の最終確認 / 当日の役割分担確認</div>
+      </div>
+
+      <div class="milestone fade-in">
+        <div class="milestone-marker"></div>
+        <div class="milestone-phase">Phase 6</div>
+        <div class="milestone-title">本番</div>
+        <div class="milestone-tasks">10:00 搬入 / 12:00 リハ / 17:00 ライブ / 21:00 二次会</div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="divider"><hr></div>
+
+  <!-- Next Actions -->
+  <section class="section fade-in">
+    <p class="section-label">Next Actions</p>
+    <h2 class="section-title">これから決めること</h2>
+
+    <!-- Decision 1: 開催時期 -->
+    <div class="decision-item fade-in">
+      <div class="decision-header">
+        <span class="decision-number">01</span>
+        <h3 class="decision-title">開催時期を決める</h3>
+      </div>
+      <div class="table-wrap">
+        <table class="compare-table">
+          <thead>
+            <tr><th>評価軸</th><th>10月</th><th>11月</th><th>12月</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>気候</td><td class="cell-good">◎ 秋晴れ</td><td class="cell-ok">○ やや寒い</td><td class="cell-warn">△ 寒い</td></tr>
+            <tr><td>会場の取りやすさ</td><td class="cell-good">◎ オフシーズン</td><td class="cell-ok">○ やや混む</td><td class="cell-warn">△ 忘年会競合</td></tr>
+            <tr><td>家族持ちの参加</td><td class="cell-good">◎ 運動会と被る可能性</td><td class="cell-ok">○ 合わせやすい</td><td class="cell-warn">△ 年末行事多い</td></tr>
+            <tr><td>同窓会の雰囲気</td><td class="cell-ok">○</td><td class="cell-ok">○</td><td class="cell-good">◎ 年末感で盛り上がる</td></tr>
+            <tr><td>準備期間</td><td class="cell-warn">△ 約8ヶ月</td><td class="cell-ok">○ 約9ヶ月</td><td class="cell-good">◎ 約10ヶ月</td></tr>
+            <tr><td>宿泊コスト</td><td class="cell-good">◎ 安い</td><td class="cell-ok">○ 普通</td><td class="cell-warn">△ 年末料金</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="decision-desc">候補日（すべて土曜）:</p>
+      <div class="date-candidates">
+        <span class="date-chip"><strong>10/10</strong> 3連休中日</span>
+        <span class="date-chip"><strong>10/17</strong></span>
+        <span class="date-chip"><strong>10/24</strong></span>
+        <span class="date-chip"><strong>11/7</strong></span>
+        <span class="date-chip"><strong>11/14</strong></span>
+        <span class="date-chip"><strong>11/21</strong> 3連休前日</span>
+        <span class="date-chip"><strong>12/5</strong></span>
+        <span class="date-chip"><strong>12/12</strong></span>
+        <span class="date-chip"><strong>12/19</strong></span>
+      </div>
+    </div>
+
+    <!-- Decision 2: 会場 -->
+    <div class="decision-item fade-in">
+      <div class="decision-header">
+        <span class="decision-number">02</span>
+        <h3 class="decision-title">会場を決める</h3>
+      </div>
+      <div class="table-wrap">
+        <table class="compare-table">
+          <thead>
+            <tr><th>会場</th><th>エリア</th><th>キャパ</th><th>費用目安</th><th>駅からのアクセス</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="cell-name">LIVE HOUSE OSSA</td><td>木更津</td><td>200人</td><td>要問合せ</td><td>JR木更津 徒歩圏内</td></tr>
+            <tr><td class="cell-name">千葉ANGA</td><td>千葉</td><td>150人</td><td>8〜11万/7h</td><td>JR千葉 徒歩7分</td></tr>
+            <tr><td class="cell-name">千葉LOOK</td><td>千葉</td><td>200人</td><td>要問合せ</td><td>JR千葉 徒歩8分</td></tr>
+            <tr><td class="cell-name">音部屋スクエア</td><td>高田馬場</td><td>60-130人</td><td>約1万/h</td><td>JR高田馬場 徒歩2分</td></tr>
+            <tr><td class="cell-name">四谷LOTUS</td><td>四谷</td><td>50-110人</td><td>6.5万〜</td><td>四谷三丁目 徒歩1分</td></tr>
+            <tr><td class="cell-name">大塚MEETS</td><td>大塚</td><td>100人</td><td>3万/5h〜</td><td>JR大塚 徒歩2分</td></tr>
+            <tr><td class="cell-name">池袋mono</td><td>池袋</td><td>150-180人</td><td>10万/土日昼〜</td><td>池袋東口 徒歩4分</td></tr>
+            <tr><td class="cell-name">下北沢VOICE FACTORY</td><td>下北沢</td><td>50-100人</td><td>8.8万/6h</td><td>下北沢西口 徒歩3分</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Decision 3: 声かけ範囲 -->
+    <div class="decision-item fade-in">
+      <div class="decision-header">
+        <span class="decision-number">03</span>
+        <h3 class="decision-title">声をかけるバンド・メンバーのリストアップ</h3>
+      </div>
+      <p class="decision-desc">何学年分を対象にするか、何バンドを目標にするか、観覧者の範囲をどうするか。</p>
+    </div>
+
+    <!-- Decision 4: 予算 -->
+    <div class="decision-item fade-in">
+      <div class="decision-header">
+        <span class="decision-number">04</span>
+        <h3 class="decision-title">予算・会費を決める</h3>
+      </div>
+      <p class="decision-desc">会場費 + 機材費 + 二次会費の概算から一人あたりの会費を算出。出演者と観覧者で傾斜をつけるかも検討。</p>
+    </div>
+
+    <!-- Decision 5: 役割分担 -->
+    <div class="decision-item fade-in">
+      <div class="decision-header">
+        <span class="decision-number">05</span>
+        <h3 class="decision-title">幹事チームの役割分担</h3>
+      </div>
+      <p class="decision-desc">企画統括 / 会場・日程調整 / 出演者連絡 / 当日運営 / 会計 --- 誰が何を持つか。</p>
+    </div>
+
+  </section>
+
+  <div class="divider"><hr></div>
+
+  <!-- Closing -->
+  <section class="closing fade-in">
+    <p class="section-label">Detail</p>
+    <p class="closing-text">
+      実行プランの全体像はこちらにまとめてあります。<br>
+      <a href="https://github.com/kenomoto3163/kosen-band-reunion/blob/main/docs/plan.md" style="color: var(--accent); text-decoration: underline;">実行プラン (GitHub)</a>
+    </p>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    KOSEN BAND REUNION 2026
+  </footer>
+
+  <script>
+    (function () {
+      var targets = document.querySelectorAll('.fade-in');
+      if (!('IntersectionObserver' in window)) {
+        targets.forEach(function (el) { el.classList.add('visible'); });
+        return;
+      }
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+      targets.forEach(function (el) { observer.observe(el); });
+    })();
+  </script>
+
+</body>
+</html>
