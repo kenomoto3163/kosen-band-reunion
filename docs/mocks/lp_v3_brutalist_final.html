@@ -840,6 +840,25 @@
     letter-spacing: 0.2em;
     margin-bottom: 6px;
   }
+  @media (max-width: 900px) {
+    .tt-row {
+      grid-template-columns: 1fr;
+      gap: 8px;
+      text-align: left;
+      padding: clamp(28px, 5vh, 48px) 0;
+    }
+    .tt-row .desc {
+      text-align: left;
+      max-width: none;
+    }
+    .tt-row .desc .when-label {
+      margin-bottom: 4px;
+    }
+    .tt-row .label {
+      font-size: clamp(30px, 7vw, 44px);
+    }
+  }
+
 
   /* ============================================================
      SCHEDULE
@@ -870,8 +889,22 @@
   .sch-item:hover { transform: translateX(8px); }
   .sch-item:last-child { border-bottom: var(--line-hair) solid var(--c-line); }
   @media (max-width: 900px) {
-    .sch-item { grid-template-columns: 1fr; gap: 14px; }
-    .sch-item .when-b { font-size: clamp(30px, 6vw, 44px); }
+    .sch-item {
+      grid-template-columns: 1fr;
+      gap: 10px;
+      align-items: start;
+    }
+    .sch-item .when-b {
+      font-size: clamp(30px, 7vw, 44px);
+      line-height: 1;
+    }
+    .sch-item .when-b small {
+      margin-bottom: 6px;
+    }
+    .sch-item .what-b strong {
+      font-size: clamp(20px, 4.5vw, 24px);
+      margin-bottom: 4px;
+    }
   }
   @media (max-width: 640px) {
     .schedule { padding-left: 44px; }
@@ -880,10 +913,10 @@
   .sch-item .when-b {
     font-family: var(--f-display);
     font-size: clamp(28px, 4vw, 56px);
-    line-height: 1;
+    line-height: 1.05;
     color: var(--c-white);
     letter-spacing: -0.02em;
-    white-space: nowrap;
+    word-break: keep-all;
   }
   .sch-item.highlight .when-b { color: var(--c-gold); }
   .sch-item .when-b small {
@@ -944,19 +977,8 @@
     letter-spacing: 0.18em;
     margin-left: 8px;
   }
-  .sch-item:nth-child(even) .when-b {
-    order: 3;
-    text-align: left;
-  }
-  .sch-item:nth-child(even) .what-b {
-    order: 1;
-    text-align: right;
-  }
-  .sch-item.highlight .dot {
-    background: var(--c-gold);
-    box-shadow: 0 0 0 1px var(--c-gold), 0 0 24px rgba(212,168,67,0.6);
-  }
-  .sch-item.highlight .when-b { color: var(--c-gold); }
+
+
 
   .schedule-footer {
     margin-top: clamp(48px, 6vh, 72px);
@@ -1336,14 +1358,7 @@
     }
     .tt-row .desc { text-align: left; max-width: none; font-size: 15px; }
 
-    .schedule::before { left: 12px; }
-    .sch-item {
-      grid-template-columns: 32px 1fr;
-      gap: 16px;
-      text-align: left;
-    }
-    .sch-item .dot { justify-self: start; margin-left: 4px; }
-    .sch-item .when-b { font-size: 34px; }
+    .sch-item .when-b { font-size: 32px; }
     .sch-item .what-b { font-size: 15px; }
     .sch-item .what-b strong { font-size: 20px; }
 
