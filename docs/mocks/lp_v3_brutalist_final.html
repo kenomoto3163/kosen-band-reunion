@@ -236,6 +236,7 @@
     display: block;
     text-shadow: 0 0 80px rgba(0,0,0,0.5);
     margin: 0;
+    text-shadow: 0 0 30px rgba(10,10,10,0.85), 0 4px 14px rgba(10,10,10,0.7);
   }
   .hero-mark .slash {
     color: var(--c-red);
@@ -263,6 +264,7 @@
     color: var(--c-white);
     display: flex;
     align-items: baseline;
+    text-shadow: 0 0 20px rgba(10,10,10,0.9), 0 2px 8px rgba(10,10,10,0.95), 0 0 40px rgba(10,10,10,0.6);
     gap: clamp(16px, 2vw, 28px);
     flex-wrap: wrap;
   }
@@ -290,6 +292,7 @@
     border-left: 4px solid var(--c-red);
     padding-left: 18px;
     max-width: 680px;
+    text-shadow: 0 0 18px rgba(10,10,10,0.9), 0 2px 6px rgba(10,10,10,0.9);
   }
   .hero-title-jp span {
     display: block;
@@ -748,6 +751,18 @@
     grid-template-columns: 1fr;
     gap: 0;
     margin-top: 20px;
+    position: relative;
+    padding-left: 64px;
+  }
+  .tt-list::before {
+    content: '';
+    position: absolute;
+    left: 24px;
+    top: 28px;
+    bottom: 28px;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--c-red) 0%, var(--c-red) 35%, var(--c-gold) 55%, var(--c-gold) 100%);
+    z-index: 0;
   }
   .tt-row {
     display: grid;
@@ -757,9 +772,44 @@
     padding: clamp(40px, 6vh, 72px) 0;
     border-top: var(--line-hair) solid var(--c-line);
     transition: transform 0.4s var(--ease-out);
+    position: relative;
+  }
+  .tt-row::before {
+    content: '';
+    position: absolute;
+    left: -48px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    background: var(--c-white);
+    border: 3px solid var(--c-red);
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px var(--c-black), 0 0 12px rgba(230,57,70,0.4);
+    z-index: 1;
+    transition: all 0.3s var(--ease-out);
+  }
+  .tt-row.highlight::before {
+    background: var(--c-red);
+    border-color: var(--c-gold);
+    width: 22px;
+    height: 22px;
+    box-shadow: 0 0 0 4px var(--c-black), 0 0 20px rgba(230,57,70,0.7);
+  }
+  .tt-row:last-child::before {
+    border-color: var(--c-gold);
   }
   .tt-row:last-child { border-bottom: var(--line-hair) solid var(--c-line); }
   .tt-row:hover { transform: translateX(12px); }
+  .tt-row:hover::before {
+    transform: translateY(-50%) scale(1.15);
+  }
+  @media (max-width: 640px) {
+    .tt-list { padding-left: 44px; }
+    .tt-list::before { left: 16px; }
+    .tt-row::before { left: -35px; width: 14px; height: 14px; }
+    .tt-row.highlight::before { width: 18px; height: 18px; }
+  }
   .tt-row .tick {
     font-family: var(--f-mono);
     font-size: 12px;
@@ -797,58 +847,87 @@
   .schedule {
     margin-top: 32px;
     position: relative;
+    padding-left: 64px;
   }
   .schedule::before {
     content: '';
     position: absolute;
-    left: 50%;
-    top: 0; bottom: 0;
-    width: 1px;
-    background: var(--c-line);
+    left: 24px;
+    top: 40px; bottom: 40px;
+    width: 3px;
+    background: linear-gradient(to bottom, var(--c-red) 0%, var(--c-red) 20%, var(--c-white) 60%, var(--c-gold) 100%);
   }
   .sch-item {
     display: grid;
-    grid-template-columns: 1fr 80px 1fr;
-    gap: 20px;
+    grid-template-columns: 240px 1fr;
+    gap: clamp(20px, 4vw, 48px);
     align-items: center;
     padding: clamp(32px, 4.5vh, 52px) 0;
     position: relative;
+    border-top: var(--line-hair) solid var(--c-line);
+    transition: transform 0.4s var(--ease-out);
+  }
+  .sch-item:hover { transform: translateX(8px); }
+  .sch-item:last-child { border-bottom: var(--line-hair) solid var(--c-line); }
+  @media (max-width: 640px) {
+    .schedule { padding-left: 44px; }
+    .schedule::before { left: 16px; }
+    .sch-item { grid-template-columns: 1fr; gap: 12px; }
   }
   .sch-item .when-b {
     font-family: var(--f-display);
-    font-size: clamp(28px, 4vw, 56px);
-    line-height: 1.05;
-    color: var(--c-red);
-    letter-spacing: -0.01em;
+    font-size: clamp(34px, 5vw, 64px);
+    line-height: 1;
+    color: var(--c-white);
+    letter-spacing: -0.02em;
   }
+  .sch-item.highlight .when-b { color: var(--c-gold); }
   .sch-item .when-b small {
     font-family: var(--f-mono);
-    font-size: 0.28em;
-    color: var(--c-gold);
-    letter-spacing: 0.22em;
+    font-size: 11px;
+    color: var(--c-red);
+    letter-spacing: 0.28em;
     display: block;
-    margin-bottom: 6px;
+    margin-bottom: 10px;
+    font-weight: 700;
   }
   .sch-item .dot {
-    width: 16px;
-    height: 16px;
+    position: absolute;
+    left: -48px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
     background: var(--c-white);
-    border: 3px solid var(--c-black);
-    box-shadow: 0 0 0 1px var(--c-white);
-    justify-self: center;
-    transition: background 0.3s var(--ease-out);
+    border: 3px solid var(--c-red);
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px var(--c-black), 0 0 12px rgba(230,57,70,0.4);
+    z-index: 1;
+    transition: all 0.3s var(--ease-out);
   }
-  .sch-item:hover .dot { background: var(--c-red); }
+  .sch-item:hover .dot { transform: translateY(-50%) scale(1.15); background: var(--c-red); }
+  .sch-item.highlight .dot {
+    background: var(--c-gold);
+    border-color: var(--c-gold);
+    width: 24px;
+    height: 24px;
+    box-shadow: 0 0 0 4px var(--c-black), 0 0 24px rgba(212,168,67,0.7);
+  }
+  @media (max-width: 640px) {
+    .sch-item .dot { left: -36px; width: 14px; height: 14px; }
+    .sch-item.highlight .dot { width: 18px; height: 18px; }
+  }
   .sch-item .what-b {
     font-family: var(--f-jp);
-    font-size: clamp(16px, 1.25vw, 18px);
-    line-height: 1.8;
-    color: var(--c-white);
+    font-size: clamp(15px, 1.2vw, 17px);
+    line-height: 1.85;
+    color: rgba(240,240,240,0.85);
   }
+  .sch-item.highlight .what-b { color: var(--c-white); }
   .sch-item .what-b strong {
     display: block;
     font-family: var(--f-display);
-    font-size: clamp(20px, 1.8vw, 24px);
+    font-size: clamp(22px, 2vw, 28px);
     font-weight: 900;
     letter-spacing: 0.04em;
     margin-bottom: 8px;
@@ -1174,6 +1253,17 @@
   /* ============================================================
      RESPONSIVE
      ============================================================ */
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, rgba(10,10,10,0.5) 0%, rgba(10,10,10,0.2) 40%, transparent 80%);
+    z-index: 1;
+    pointer-events: none;
+  }
+  .hero-content { position: relative; z-index: 2; }
+
   @media (max-width: 860px) {
     :root { --side-pad: 22px; }
     body { font-size: 15px; line-height: 1.8; }
@@ -1249,10 +1339,9 @@
       text-align: left;
     }
     .sch-item .dot { justify-self: start; margin-left: 4px; }
-    .sch-item .when-b, .sch-item .what-b { order: initial !important; text-align: left !important; }
-    .sch-item .when-b { grid-column: 2; font-size: 26px; }
-    .sch-item .what-b { grid-column: 2; font-size: 15px; }
-    .sch-item .what-b strong { font-size: 19px; }
+    .sch-item .when-b { font-size: 34px; }
+    .sch-item .what-b { font-size: 15px; }
+    .sch-item .what-b strong { font-size: 20px; }
 
     .cta-grid { grid-template-columns: 1fr; gap: 48px; }
   
@@ -1435,7 +1524,7 @@
         </div>
         <div class="sig-row sig-row-sub">
           <span class="role">幹事 / CREW</span>
-          <span class="name">一つ上の代 · 武蔵</span>
+          <span class="name">薄青っぽい色の代 · 武蔵</span>
         </div>
       </div>
     </article>
@@ -1721,7 +1810,7 @@
   <p class="footer-sub reveal">TRUST OVER 40 — KOSEN BAND REUNION LIVE 2026</p>
 
   <div class="footer-bottom">
-    <span>© 2026 KOSEN BAND REUNION / ORGANIZED BY 緑ジャージの代 · 榎本 / 山田 / 上栗 / 武蔵</span>
+    <span>© 2026 KOSEN BAND REUNION / ORGANIZED BY 榎本・山田・上栗（緑ジャージの代）& 武蔵（薄青っぽい色の代）</span>
     <span class="cc">PARTICIPANT EDITION</span>
   </div>
 </footer>
