@@ -859,8 +859,8 @@
   }
   .sch-item {
     display: grid;
-    grid-template-columns: 240px 1fr;
-    gap: clamp(20px, 4vw, 48px);
+    grid-template-columns: clamp(150px, 22vw, 220px) 1fr;
+    gap: clamp(20px, 3vw, 40px);
     align-items: center;
     padding: clamp(32px, 4.5vh, 52px) 0;
     position: relative;
@@ -869,17 +869,21 @@
   }
   .sch-item:hover { transform: translateX(8px); }
   .sch-item:last-child { border-bottom: var(--line-hair) solid var(--c-line); }
+  @media (max-width: 900px) {
+    .sch-item { grid-template-columns: 1fr; gap: 14px; }
+    .sch-item .when-b { font-size: clamp(30px, 6vw, 44px); }
+  }
   @media (max-width: 640px) {
     .schedule { padding-left: 44px; }
     .schedule::before { left: 16px; }
-    .sch-item { grid-template-columns: 1fr; gap: 12px; }
   }
   .sch-item .when-b {
     font-family: var(--f-display);
-    font-size: clamp(34px, 5vw, 64px);
+    font-size: clamp(28px, 4vw, 56px);
     line-height: 1;
     color: var(--c-white);
     letter-spacing: -0.02em;
+    white-space: nowrap;
   }
   .sch-item.highlight .when-b { color: var(--c-gold); }
   .sch-item .when-b small {
