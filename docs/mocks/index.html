@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>20/40 — Mock Candidates</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --black: #0a0a0a;
+  --red: #e63946;
+  --gold: #d4a843;
+  --white: #f0f0f0;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: 'Noto Sans JP', sans-serif;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 64px 20px 80px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 56px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid rgba(240, 240, 240, 0.1);
+}
+
+.brand {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 4rem;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.3em;
+  color: var(--red);
+  margin-bottom: 24px;
+}
+
+.label {
+  font-size: 0.85rem;
+  color: rgba(240, 240, 240, 0.5);
+  letter-spacing: 0.05em;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.item {
+  display: block;
+  background: rgba(240, 240, 240, 0.04);
+  border: 1px solid rgba(240, 240, 240, 0.1);
+  padding: 24px 24px 24px 28px;
+  text-decoration: none;
+  color: var(--white);
+  transition: all 0.25s ease;
+  position: relative;
+}
+
+.item:hover,
+.item:active {
+  border-color: var(--red);
+  background: rgba(230, 57, 70, 0.08);
+  transform: translateX(4px);
+}
+
+.item::after {
+  content: '→';
+  position: absolute;
+  right: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.4rem;
+  color: var(--gold);
+  opacity: 0.6;
+  transition: all 0.25s ease;
+}
+
+.item:hover::after,
+.item:active::after {
+  opacity: 1;
+  transform: translateY(-50%) translateX(4px);
+}
+
+.item__num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  margin-bottom: 4px;
+}
+
+.item__name {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.6rem;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+  margin-bottom: 6px;
+}
+
+.item__jp {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+
+.item__desc {
+  font-size: 0.78rem;
+  color: rgba(240, 240, 240, 0.55);
+  line-height: 1.7;
+  padding-right: 28px;
+}
+
+.note {
+  margin-top: 48px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(240, 240, 240, 0.08);
+  font-size: 0.75rem;
+  color: rgba(240, 240, 240, 0.4);
+  text-align: center;
+  line-height: 1.9;
+}
+
+.current {
+  margin-top: 32px;
+  text-align: center;
+}
+
+.current a {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 0.9rem;
+  letter-spacing: 0.2em;
+  color: rgba(240, 240, 240, 0.5);
+  text-decoration: none;
+  padding-bottom: 4px;
+  border-bottom: 1px solid rgba(240, 240, 240, 0.2);
+  transition: all 0.25s ease;
+}
+
+.current a:hover {
+  color: var(--white);
+  border-color: var(--white);
+}
+
+@media (max-width: 480px) {
+  .brand { font-size: 3rem; }
+  .item__name { font-size: 1.3rem; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <header class="header">
+    <h1 class="brand">20/40</h1>
+    <p class="subtitle">TRUST OVER 40</p>
+    <p class="label">MOCK CANDIDATES — Preview</p>
+  </header>
+
+  <div class="list">
+    <a href="lp_v2_editorial.html" class="item">
+      <div class="item__num">01</div>
+      <div class="item__name">EDITORIAL</div>
+      <div class="item__jp">エディトリアル・マガジン</div>
+      <p class="item__desc">高級音楽雑誌風。明朝体で格調、序数やキャプション、非対称グリッド。</p>
+    </a>
+
+    <a href="lp_v2_kinetic.html" class="item">
+      <div class="item__num">02</div>
+      <div class="item__name">KINETIC</div>
+      <div class="item__jp">キネティック・モーション</div>
+      <p class="item__desc">動きで魅せる。Marqueeの流れる文字、マウス追従、マグネティックボタン。</p>
+    </a>
+
+    <a href="lp_v2_brutalist.html" class="item">
+      <div class="item__num">03</div>
+      <div class="item__name">BRUTALIST</div>
+      <div class="item__jp">リファインド・ブルータリスト</div>
+      <p class="item__desc">巨大タイポとグリッド破壊。太罫線、四隅のメタ情報、計算された力強さ。</p>
+    </a>
+  </div>
+
+  <div class="current">
+    <a href="../">← CURRENT LIVE VERSION</a>
+  </div>
+
+  <p class="note">3パターンのブラッシュアップ候補です。<br>お好みのものを選んでください。</p>
+</div>
+</body>
+</html>
