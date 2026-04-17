@@ -690,7 +690,7 @@
   }
   .venue {
     display: grid;
-    grid-template-columns: 60px 1fr auto auto;
+    grid-template-columns:  auto 1fr auto auto auto;
     align-items: center;
     gap: clamp(16px, 3vw, 40px);
     padding: clamp(26px, 4vh, 44px) 0;
@@ -950,6 +950,95 @@
     letter-spacing: -0.01em;
   }
 
+
+  .signature-v2 {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 48px;
+    padding-top: 24px;
+    border-top: 3px solid var(--c-red);
+    text-align: right;
+  }
+  .signature-v2 .sig-row {
+    display: flex;
+    justify-content: flex-end;
+    align-items: baseline;
+    gap: 20px;
+    font-size: 15px;
+  }
+  .signature-v2 .sig-row .role {
+    font-family: var(--f-mono);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--c-red);
+  }
+  .signature-v2 .sig-row .name {
+    font-weight: 700;
+    color: var(--c-white);
+  }
+  .signature-v2 .sig-row-sub .name {
+    font-weight: 400;
+    color: rgba(240,240,240,0.75);
+    font-size: 14px;
+  }
+  @media (max-width: 640px) {
+    .signature-v2 .sig-row {
+      flex-direction: column;
+      gap: 4px;
+      align-items: flex-end;
+    }
+  }
+
+
+
+  .month-dates {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 16px;
+    padding-top: 14px;
+    border-top: 1px dashed rgba(240,240,240,0.15);
+  }
+  .month-dates .chip {
+    font-family: var(--f-mono);
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    padding: 6px 12px;
+    border: 1px solid rgba(240,240,240,0.25);
+    color: var(--c-white);
+    transition: all 0.2s var(--ease-out);
+  }
+  .month-dates .chip:hover {
+    background: var(--c-red);
+    border-color: var(--c-red);
+  }
+
+
+  .venue .price {
+    font-family: var(--f-mono);
+    font-size: 13px;
+    color: var(--c-gold);
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+  }
+  @media (max-width: 640px) {
+    .venue { grid-template-columns: auto 1fr !important; }
+    .venue .area, .venue .cap, .venue .price {
+      grid-column: 2 / -1;
+      font-size: 12px;
+    }
+  }
+
+  .qr-card { text-decoration: none; display: block; }
+  .qr-card .qr-img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    background: var(--c-white);
+  }
+
   .qr-card {
     background: var(--c-white);
     color: var(--c-black);
@@ -1135,7 +1224,7 @@
 
     .where-head { grid-template-columns: 1fr; }
     .venue {
-      grid-template-columns: 40px 1fr;
+      grid-template-columns:  auto 1fr auto auto auto;
       gap: 8px 12px;
       row-gap: 6px;
     }
@@ -1166,7 +1255,47 @@
     .sch-item .what-b strong { font-size: 19px; }
 
     .cta-grid { grid-template-columns: 1fr; gap: 48px; }
-    .qr-card { max-width: 280px; margin: 0 auto; }
+  
+  .signature-v2 {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 48px;
+    padding-top: 24px;
+    border-top: 3px solid var(--c-red);
+    text-align: right;
+  }
+  .signature-v2 .sig-row {
+    display: flex;
+    justify-content: flex-end;
+    align-items: baseline;
+    gap: 20px;
+    font-size: 15px;
+  }
+  .signature-v2 .sig-row .role {
+    font-family: var(--f-mono);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--c-red);
+  }
+  .signature-v2 .sig-row .name {
+    font-weight: 700;
+    color: var(--c-white);
+  }
+  .signature-v2 .sig-row-sub .name {
+    font-weight: 400;
+    color: rgba(240,240,240,0.75);
+    font-size: 14px;
+  }
+  @media (max-width: 640px) {
+    .signature-v2 .sig-row {
+      flex-direction: column;
+      gap: 4px;
+      align-items: flex-end;
+    }
+  }
+
+  .qr-card { max-width: 280px; margin: 0 auto; }
     .cta-btn { padding: 22px 32px; font-size: 18px; width: 100%; justify-content: space-between; }
 
     .footer-bottom { flex-direction: column; align-items: flex-start; }
@@ -1185,9 +1314,9 @@
 
 <!-- EDGE META -->
 <div class="edge edge-tl">20/40 · TRUST OVER 40</div>
-<div class="edge edge-tr">REC <span class="dot"></span> 2026</div>
-<div class="edge edge-bl">KOSEN BAND REUNION LIVE · CH. 2026</div>
-<div class="edge edge-br">001 / 09 &nbsp;→</div>
+<div class="edge edge-tr">2026</div>
+<div class="edge edge-bl">KOSEN BAND REUNION LIVE</div>
+
 
 <!-- ============================================================
      HERO
@@ -1203,11 +1332,7 @@
     <h1 class="hero-mark">20<span class="slash">/</span>40</h1>
 
     <div class="hero-sub">
-      <span>TRUST</span>
-      <span class="arrow">▶</span>
-      <span>OVER</span>
-      <span class="arrow">▶</span>
-      <span>40</span>
+      <span>TRUST&nbsp;OVER&nbsp;40</span>
       <span class="num">— VOL. 01</span>
     </div>
 
@@ -1220,7 +1345,6 @@
   <div class="hero-meta">
     <div class="block">
       <span class="lbl">DOC NO.</span>
-      001 / 09
     </div>
     <div class="scroll-ind">
       <span>SCROLL ↓</span>
@@ -1237,7 +1361,6 @@
      BRIDGE
      ============================================================ -->
 <section class="bridge heavy" id="bridge">
-  <span class="section-num">002 / BRIDGE</span>
   <span class="section-tag-right">— INTRO</span>
 
   <h2 class="bridge-lead reveal-left">
@@ -1255,7 +1378,6 @@
      MESSAGE
      ============================================================ -->
 <section class="message" id="message">
-  <span class="section-num">003 / MESSAGE</span>
   <span class="section-tag-right">— FROM THE ORGANIZER</span>
 
   <p class="section-comment reveal">
@@ -1270,7 +1392,7 @@
       <span class="label">DATE</span>
       <span class="val">2026 · 04 · SPRING</span>
       <span class="label">FOR</span>
-      <span class="val">卒業生各位</span>
+      <span class="val">2006/2007年あたりに卒業した代各位</span>
       <span class="label">TOPIC</span>
       <span class="val">企画の背景と想い</span>
     </aside>
@@ -1302,9 +1424,19 @@
 
       <p>まずはざっくりと内容を確認していただき、アンケートに回答いただけると嬉しいです。よろしくお願いします。</p>
 
-      <div class="signature">
-        <span class="role">発起人 / ORGANIZER</span>
-        <span class="name">緑ジャージの代のJ科 榎本</span>
+      <div class="signature signature-v2">
+        <div class="sig-row">
+          <span class="role">発起人 / ORGANIZER</span>
+          <span class="name">2006/2007年あたり卒業 · 緑ジャージの代 · J科 榎本</span>
+        </div>
+        <div class="sig-row sig-row-sub">
+          <span class="role">幹事 / CREW</span>
+          <span class="name">緑ジャージの代 · D科 山田、上栗</span>
+        </div>
+        <div class="sig-row sig-row-sub">
+          <span class="role">幹事 / CREW</span>
+          <span class="name">一つ上の代 · 武蔵</span>
+        </div>
       </div>
     </article>
   </div>
@@ -1314,7 +1446,6 @@
      WHEN
      ============================================================ -->
 <section class="when heavy" id="when">
-  <span class="section-num">004 / WHEN</span>
   <span class="section-tag-right">— 候補月と候補日</span>
 
   <div class="when-head reveal-left">
@@ -1332,8 +1463,13 @@
     <div class="month-row reveal">
       <div class="month-num">10<span class="suf">OCT</span></div>
       <div class="month-body">
-        <div class="pro">気候◎・会場安い</div>
-        <div class="con">準備期間やや短め</div>
+        <div class="pro">PROS · 気候◎・会場安い・取りやすい</div>
+        <div class="con">CONS · 準備期間やや短め</div>
+        <div class="month-dates">
+          <span class="chip">10 / 10</span>
+          <span class="chip">10 / 17</span>
+          <span class="chip">10 / 24</span>
+        </div>
       </div>
     </div>
 
@@ -1341,8 +1477,13 @@
     <div class="month-row reveal">
       <div class="month-num">11<span class="suf">NOV</span></div>
       <div class="month-body">
-        <div class="pro">バランス良し</div>
-        <div class="con">3連休前後が狙い目</div>
+        <div class="pro">PROS · バランス良し・気候コスト準備の三拍子</div>
+        <div class="con">CONS · 3連休前後が狙い目（被ると予約困難）</div>
+        <div class="month-dates">
+          <span class="chip">11 / 07</span>
+          <span class="chip">11 / 14</span>
+          <span class="chip">11 / 21</span>
+        </div>
       </div>
     </div>
 
@@ -1350,26 +1491,16 @@
     <div class="month-row reveal">
       <div class="month-num">12<span class="suf">DEC · 本命</span></div>
       <div class="month-body">
-        <div class="pro">忘年会の盛り上がり◎</div>
-        <div class="con">会場争奪・宿泊費高め</div>
+        <div class="pro">PROS · 忘年会の盛り上がり◎・年末の再会感</div>
+        <div class="con">CONS · 会場争奪激化・宿泊費高め</div>
+        <div class="month-dates">
+          <span class="chip">12 / 05</span>
+          <span class="chip">12 / 12</span>
+          <span class="chip">12 / 19</span>
+        </div>
       </div>
     </div>
 
-  </div>
-
-  <div class="date-chips reveal">
-    <p class="date-chips-label">CANDIDATE DATES</p>
-    <div class="chips">
-      <span class="chip">10 / 10</span>
-      <span class="chip">10 / 17</span>
-      <span class="chip">10 / 24</span>
-      <span class="chip">11 / 07</span>
-      <span class="chip">11 / 14</span>
-      <span class="chip">11 / 21</span>
-      <span class="chip">12 / 05</span>
-      <span class="chip">12 / 12</span>
-      <span class="chip">12 / 19</span>
-    </div>
   </div>
 </section>
 
@@ -1377,7 +1508,6 @@
      WHERE
      ============================================================ -->
 <section class="where" id="where">
-  <span class="section-num">005 / WHERE</span>
   <span class="section-tag-right">— 候補会場 8 箇所</span>
 
   <div class="where-head reveal-left">
@@ -1399,48 +1529,56 @@
       <span class="name">LIVE HOUSE OSSA</span>
       <span class="area">木更津 / KISARAZU</span>
       <span class="cap">200<small>CAP</small></span>
+      <span class="price">要問合せ</span>
     </li>
     <li class="venue reveal">
       <span class="no">V02</span>
       <span class="name">千葉ANGA</span>
       <span class="area">千葉 / CHIBA</span>
       <span class="cap">150<small>CAP</small></span>
+      <span class="price">8〜11万 / 7h</span>
     </li>
     <li class="venue reveal">
       <span class="no">V03</span>
       <span class="name">千葉LOOK</span>
       <span class="area">千葉 / CHIBA</span>
       <span class="cap">200<small>CAP</small></span>
+      <span class="price">要問合せ</span>
     </li>
     <li class="venue reveal">
       <span class="no">V04</span>
       <span class="name">音部屋スクエア</span>
       <span class="area">高田馬場 / TAKADANOBABA</span>
       <span class="cap">60–130<small>CAP</small></span>
+      <span class="price">約1万 / h</span>
     </li>
     <li class="venue reveal">
       <span class="no">V05</span>
       <span class="name">四谷LOTUS</span>
       <span class="area">四谷 / YOTSUYA</span>
       <span class="cap">50–110<small>CAP</small></span>
+      <span class="price">6.5万〜</span>
     </li>
     <li class="venue reveal">
       <span class="no">V06</span>
       <span class="name">大塚MEETS</span>
       <span class="area">大塚 / OTSUKA</span>
       <span class="cap">100<small>CAP</small></span>
+      <span class="price">3万 / 5h〜</span>
     </li>
     <li class="venue reveal">
       <span class="no">V07</span>
       <span class="name">池袋LiveHouse mono</span>
       <span class="area">池袋 / IKEBUKURO</span>
       <span class="cap">150–180<small>CAP</small></span>
+      <span class="price">土日昼 10万〜</span>
     </li>
     <li class="venue reveal">
       <span class="no">V08</span>
       <span class="name">下北沢VOICE FACTORY</span>
       <span class="area">下北沢 / SHIMOKITAZAWA</span>
       <span class="cap">50–100<small>CAP</small></span>
+      <span class="price">8.8万 / 6h</span>
     </li>
   </ul>
 </section>
@@ -1449,7 +1587,6 @@
      TIMETABLE
      ============================================================ -->
 <section class="timetable heavy" id="timetable">
-  <span class="section-num">006 / TIMETABLE</span>
   <span class="section-tag-right">— 当日の流れ</span>
 
   <div class="when-head reveal-left">
@@ -1464,7 +1601,7 @@
   <div class="tt-list">
     <div class="tt-row reveal-left">
       <span class="tick">PART / 01</span>
-      <span class="label">REHEARSAL</span>
+      <span class="label">SETUP &amp; REHEARSAL</span>
       <span class="desc">
         <span class="when-label">昼過ぎ 〜</span>
         会場入り・機材セッティング・各バンドのリハーサル。久々の再会。
@@ -1472,7 +1609,7 @@
     </div>
     <div class="tt-row highlight reveal-right">
       <span class="tick">PART / 02</span>
-      <span class="label">LIVE</span>
+      <span class="label">LIVE STAGE</span>
       <span class="desc">
         <span class="when-label">夕方 〜 夜</span>
         ライブ本番（5〜10バンド）。セトリは各バンド自由に。あの頃の一曲を。
@@ -1480,7 +1617,7 @@
     </div>
     <div class="tt-row reveal-left">
       <span class="tick">PART / 03</span>
-      <span class="label">AFTER</span>
+      <span class="label">AFTER PARTY</span>
       <span class="desc">
         <span class="when-label">夜</span>
         打ち上げ。参加は自由。朝まで語るも良し、早めに抜けるも良し。
@@ -1493,7 +1630,6 @@
      SCHEDULE
      ============================================================ -->
 <section class="sch" id="schedule">
-  <span class="section-num">007 / SCHEDULE</span>
   <span class="section-tag-right">— 全体スケジュール</span>
 
   <div class="when-head reveal-left">
@@ -1542,7 +1678,6 @@
      CTA
      ============================================================ -->
 <section class="cta" id="cta">
-  <span class="section-num">008 / JOIN</span>
   <span class="section-tag-right">— アンケート回答のお願い</span>
 
   <div class="when-head reveal-left">
@@ -1568,13 +1703,13 @@
       </p>
     </div>
 
-    <div class="qr-card reveal-right" aria-label="LINE QR コード（プレースホルダー）">
-      <div class="qr-ph" role="img" aria-label="QR Code"></div>
+    <a href="https://line.me/ti/p/v_hE2VVSjY" class="qr-card reveal-right" aria-label="LINEで発起人を友だち追加">
+      <img class="qr-img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUoAAAFKAQAAAABTUiuoAAACeElEQVR4nO1bTW60MAx9NpG6BKkH6FGYm336jtQbwFF6A1hWArmyHRimixZ1UawmXjCBvMWTnvybDAlO2shnkUCFcoWiQjFTttucQEQJGIkI8FezFITrWeO/C23EDMBKMrQL6NaK0E33e9uawnCtUGSPggmFlY4A9bxbJK4lQ9PxZe4gmJ9ENdLVbxDgCsXPoK0I0cs72Qrjy/LbBL42/ma/FKiImDKat+annLK0yjDdZIjEtWRoMo3yy/ws1E/Ptlp8NfpeE4ErFw9N6j3by7ySjB00Er6TaCSUSFy5QuFtVbcS0T1RaTj8NyGXiGPtt2JAYSnLOipfDdp+6cMKevSTdmP6GC7nysVD4QVGb/2vayS7ULk7zqUGX82Vi4fCHMf18JGFWbtr5BvVtyKp1XsF/6CbB0HzPP0dLufKxUNxj4Q+LFTdcvulDuaR0HIZX82Vi4ciR8LdrazAMMmGh12pauFyKHJS8kH85mWarbJGe/IaLufKxUOTT97RTvYQjF2zoJ9WH3KIz3djcOXiodj6LXMwtdbyVk5ZdtxVK/iAkRB73npQ0NJYVSuEWnw/g5QBaz559FHTp3NJDsD1rPHfha5+oGWDQfSi51to/NjkeJTMEbiWDYUczELfnqjsNc83agUfQq2HO09bJBR5s7m8+ZYV9KpgBK5njUu489Rs9YaXHypUMK5lQ5M9CWgWO4NE/5YW6l/ts6WsZiH9huu5coXiYHrdKd+dsZhorraS/LdvHIprkdD0+UP/mha7nCaA1RsTqm9FgSKXfvv4/dAO22obG0qdZSDYnadOp7odYex0bLjlrShcuXgo1X8EoUJPG1coTtsHgFW47f8CRDkAAAAASUVORK5CYII=" alt="LINE QR" />
       <div class="qr-label">
         LINEで幹事に連絡
-        <strong></strong>
+        <strong>@ENOMOTO</strong>
       </div>
-    </div>
+    </a>
   </div>
 </section>
 
@@ -1582,13 +1717,12 @@
      FOOTER
      ============================================================ -->
 <footer id="footer">
-  <span class="section-num">009 / END</span>
   <h2 class="footer-mark reveal-left">20<span class="slash">/</span>40</h2>
   <p class="footer-sub reveal">TRUST OVER 40 — KOSEN BAND REUNION LIVE 2026</p>
 
   <div class="footer-bottom">
-    <span>© 2026 KOSEN BAND REUNION / ORGANIZED BY 緑ジャージの代のJ科 榎本</span>
-    <span class="cc">DOC 001 / 09 · PARTICIPANT EDITION · V3 FINAL</span>
+    <span>© 2026 KOSEN BAND REUNION / ORGANIZED BY 緑ジャージの代 · 榎本 / 山田 / 上栗 / 武蔵</span>
+    <span class="cc">PARTICIPANT EDITION</span>
   </div>
 </footer>
 
@@ -1614,22 +1748,7 @@
     targets.forEach(function(el) { observer.observe(el); });
   })();
 
-  // セクション番号を edge-br に反映（スクロールスパイ）
-  (function() {
-    var sections = document.querySelectorAll('section, header.hero, footer');
-    var edgeBr = document.querySelector('.edge-br');
-    if (!edgeBr || sections.length === 0) return;
-    var total = String(sections.length).padStart(3, '0');
-    var spy = new IntersectionObserver(function(entries) {
-      entries.forEach(function(entry) {
-        if (entry.isIntersecting && entry.intersectionRatio > 0.35) {
-          var idx = Array.from(sections).indexOf(entry.target) + 1;
-          edgeBr.textContent = String(idx).padStart(3, '0') + ' / ' + total + '  →';
-        }
-      });
-    }, { threshold: [0.35, 0.6] });
-    sections.forEach(function(s) { spy.observe(s); });
-  })();
+  
 </script>
 
 </body>
